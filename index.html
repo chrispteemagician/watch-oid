@@ -406,25 +406,6 @@
 
 
 <!-- ============================================================ -->
-<!-- AGE VERIFICATION MODAL                                        -->
-<!-- ============================================================ -->
-<div id="ageModal" class="hidden fixed inset-0 flex items-center justify-center z-50 p-4" style="background: rgba(26,16,8,0.92);">
-    <div class="card-glow max-w-md w-full" style="background: var(--mid);">
-        <div class="text-center mb-6">
-            <div class="text-5xl mb-3">⌚</div>
-            <h2 class="text-2xl font-bold" style="color: var(--gold);">Welcome to the Workshop</h2>
-            <p class="text-sm mt-2" style="color: var(--cream-dim);">Watch-Oid is an adult-focused educational community. Kids welcome with parent permission.</p>
-        </div>
-        <div class="space-y-3">
-            <button onclick="confirmAge('adult')" class="w-full btn-gold text-lg">I'm 18+ (Come In)</button>
-            <button onclick="confirmAge('parent')" class="w-full btn-outline">I'm a Parent/Guardian</button>
-            <button onclick="confirmAge('under18')" class="w-full btn-outline" style="border-color: var(--patina); color: var(--patina);">I'm Under 18 (Need Parent OK)</button>
-        </div>
-        <p class="text-xs text-center mt-5" style="color: var(--patina);">A safe space for skill-sharing across generations. No social media nonsense. Just real humans helping real humans.</p>
-    </div>
-</div>
-
-<!-- ============================================================ -->
 <!-- FIXED NAV DOTS (right side)                                    -->
 <!-- ============================================================ -->
 <nav id="navDots" class="fixed right-3 top-1/2 -translate-y-1/2 z-40 flex flex-col gap-3 hidden md:flex" aria-label="Page sections">
@@ -1387,8 +1368,6 @@ const patienceMessages = [
 
 // ===== INIT =====
 window.onload = async function() {
-    checkAgeVerification();
-
     // Patreon first
     restorePatreonSession();
     handlePatreonCallback();
@@ -1473,23 +1452,6 @@ async function loadBroadcast() {
         document.getElementById('broadcastSection').classList.remove('hidden');
         if (data.is_emergency) document.getElementById('emergencyBanner').classList.remove('hidden');
     } catch (e) { console.log('Broadcast not available'); }
-}
-
-// ===== AGE VERIFICATION =====
-function checkAgeVerification() {
-    const verified = localStorage.getItem('ageVerified');
-    if (!verified) {
-        document.getElementById('ageModal').classList.remove('hidden');
-    }
-}
-
-function confirmAge(type) {
-    localStorage.setItem('ageVerified', type);
-    localStorage.setItem('ageVerifiedDate', new Date().toISOString());
-    document.getElementById('ageModal').classList.add('hidden');
-    if (type === 'under18') {
-        alert('Please ask your parent or guardian to sign up with you. They can create an account and add you as a supervised user.');
-    }
 }
 
 // ===== AUTH =====
