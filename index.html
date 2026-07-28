@@ -1727,7 +1727,7 @@ async function loadRecentActivity() {
     try {
         const { data } = await supabaseClient.from('users').select('username, created_at').order('created_at', { ascending: false }).limit(5);
         if (data && data.length > 0) {
-            const html = data.map(user => `<p>${CONFIG.loadingIcon} <strong style="color: var(--gold);">${user.username}</strong> joined the village!</p>`).join('');
+            const html = data.map(user => `<p>${CONFIG.loadingIcon} <strong style="color: var(--gold);">${escapeHtml(user.username)}</strong> joined the village!</p>`).join('');
             document.getElementById('activityList').innerHTML = html;
         } else {
             document.getElementById('activityList').innerHTML = '<p class="text-center" style="color: var(--patina);">Be the first to join!</p>';
@@ -1810,7 +1810,7 @@ async function loadLeaderboard() {
                     <div class="flex items-center gap-3">
                         <span class="text-2xl font-bold" style="color: var(--gold);">#${i + 1}</span>
                         <span style="color: var(--cream-dim);">${badge}</span>
-                        <span class="font-bold" style="color: var(--cream);">@${user.username}</span>
+                        <span class="font-bold" style="color: var(--cream);">@${escapeHtml(user.username)}</span>
                     </div>
                     <span class="font-bold" style="color: var(--brass);">${user.kudos} Kudos</span>
                 </div>`;
