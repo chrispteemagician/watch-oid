@@ -599,6 +599,12 @@
                 <a href="https://www.spicylister.com" target="_blank" class="spicy-btn">List it on SpicyLister</a>
             </div>
 
+            <!-- Honesty box -->
+            <div id="honestyBox" class="card text-center mb-6" style="border-color: var(--gold-dark);">
+                <p class="text-xs leading-relaxed" style="color: var(--cream-dim);">This is free, always will be — that's not changing. It saved you time just now, and it costs real money to keep running. Tell a mate who'd use it too, or pay it forward some other way.</p>
+                <p class="text-xs mt-2" style="color: var(--patina);">One-off: <a href="https://buymeacoffee.com/chrispteemagician" target="_blank" rel="noopener noreferrer" style="color: var(--gold); font-weight: 700;">buy me a coffee</a>. Ongoing: <a href="https://www.patreon.com/chrisptee" target="_blank" rel="noopener noreferrer" style="color: var(--gold); font-weight: 700;">Patreon</a>.</p>
+            </div>
+
             <!-- Sign in prompt -->
             <div id="signInPrompt" class="card text-center" style="border-color: var(--gold-dark);">
                 <p class="font-semibold mb-4" style="color: var(--cream);">Sign in to earn kudos, track your identifications, and unlock village features!</p>
@@ -1080,7 +1086,7 @@
                     <p>2. <strong style="color: var(--cream);">Be honest.</strong> If it's a fake, say so gently. If it's valuable, don't lowball.</p>
                     <p>3. <strong style="color: var(--cream);">Share knowledge.</strong> The best watchmakers taught freely. So do we.</p>
                     <p>4. <strong style="color: var(--cream);">Protect the craft.</strong> Support independent watchmakers. Buy quality, not quantity.</p>
-                    <p>5. <strong style="color: var(--cream);">World domination through kindness.</strong> One tick at a time.</p>
+                    <p>5. <strong style="color: var(--cream);">Just trying to be useful.</strong> One tick at a time.</p>
                 </div>
             </div>
         </div>
@@ -1270,7 +1276,7 @@
             <h3 class="text-lg font-bold mb-3" style="color: var(--gold);">WE ALL STAND ON THE SHOULDERS OF GIANTS</h3>
             <p class="text-sm mb-6" style="color: var(--cream-dim);">Abraham-Louis Breguet - John Harrison - George Daniels - Hans Wilsdorf - Thomas Mudge - Yoshikazu Akahane - Thomas Tompion - A. Lange</p>
 
-            <p class="font-hand text-xl mb-4" style="color: var(--gold);">"World Domination Through Kindness. One tick at a time."</p>
+            <p class="font-hand text-xl mb-4" style="color: var(--gold);">"Just trying to be useful. One tick at a time."</p>
 
             <div class="flex flex-wrap gap-4 justify-center mb-6 text-sm">
                 <a href="https://www.patreon.com/chrisptee" target="_blank" style="color: var(--brass);">Patreon</a>
@@ -1552,6 +1558,7 @@ function showPatreonStatus(tier) {
     const label = document.getElementById('patreonTierLabel');
     if (label) label.textContent = (labels[tier] || '🏡 Villager') + ' · Patreon Active';
     if (bar) bar.classList.remove('hidden');
+    document.getElementById('honestyBox')?.classList.toggle('hidden', !!patreonSession?.isPro);
 }
 
 // ===== MEET — what3words =====
