@@ -1,0 +1,30 @@
+# Watch-Oid
+
+> Free AI-powered identification tool for watches — vintage, modern, mechanical, quartz. Ask Old Cogs, a 71-year-old master horologist, anything about movements, fakes, servicing, or what's in grandad's drawer.
+
+## Pages
+
+- [The Horologist's Workshop](https://watch-oid.co.uk/): identify a watch, Learn, Q&A, Ask Old Cogs, Gear, village/join
+
+## What it does
+
+- **Identify**: upload a photo of a watch — Watch-Oid identifies make/model/movement and gives an estimated value.
+- **Ask Old Cogs** (`chat-cogs.js`, free, no sign-in): a 71-year-old master horologist, apprenticed in Clerkenwell in 1971, answers questions about movements, fakes, servicing, or repair.
+- **The Village**: kudos, leaderboard, and a hosted hut/hamlet page for members — real ongoing hosting cost, never required to use identify or Ask Old Cogs.
+
+## Who it's for
+
+Anyone with a vintage or modern watch — collectors, sellers, or someone who just found one in a drawer.
+
+## Tech
+
+Gemini 2.5 Flash (Ask Old Cogs) · Supabase · Netlify Functions
+
+## Membership (informational — never required to use identify or Ask Old Cogs)
+
+Villager £4.95/month · Elder earned, not bought · Founder £14.95/month — patreon.com/chrisptee
+
+## Part of the FeelFamous ecosystem
+
+Built by Chris P Taylor (Doc Strange). Just trying to be useful. One tick at a time.
+Contact: chris@chrisptee.co.uk
